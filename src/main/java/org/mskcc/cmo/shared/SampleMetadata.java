@@ -3,29 +3,29 @@ package org.mskcc.cmo.shared;
 import java.io.Serializable;
 
 public class SampleMetadata implements Serializable {
-    private String mrn;
-    private String cmoPatientId;
-    private String cmoSampleId;
-    private String igoId;
-    private String investigatorSampleId;
-    private String species;
-    private String sex;
-    private String tumorOrNormal;
-    private String sampleType;
-    private String preservation;
-    private String tumorType;
-    private String parentTumorType;
-    private String specimenType;
-    private String sampleOrigin;
-    private String tissueSource;
-    private String tissueLocation;
-    private String recipe;
-    private String baitset;
-    private String fastqPath;
-    String principalInvestigator;
-    private String ancestorSample;
-    private boolean doNotUse;
-    private String sampleStatus;
+    protected String mrn;
+    protected String cmoPatientId;
+    protected String cmoSampleId;
+    protected String igoId;
+    protected String investigatorSampleId;
+    protected String species;
+    protected String sex;
+    protected String tumorOrNormal;
+    protected String sampleType;
+    protected String preservation;
+    protected String tumorType;
+    protected String parentTumorType;
+    protected String specimenType;
+    protected String sampleOrigin;
+    protected String tissueSource;
+    protected String tissueLocation;
+    protected String recipe;
+    protected String baitset;
+    protected String fastqPath;
+    protected String principalInvestigator;
+    protected String ancestorSample;
+    protected boolean doNotUse;
+    protected String sampleStatus;
 
     public SampleMetadata(){}
 
