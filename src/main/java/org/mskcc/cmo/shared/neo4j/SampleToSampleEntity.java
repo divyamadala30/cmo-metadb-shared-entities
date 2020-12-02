@@ -11,7 +11,8 @@ import org.neo4j.ogm.annotation.StartNode;
  *
  * @author ochoaa
  */
-@RelationshipEntity(type="SP_TO_SP")
+
+@RelationshipEntity(type = "SP_TO_SP")
 public class SampleToSampleEntity implements Serializable {
     @Id @GeneratedValue
     private Long id;

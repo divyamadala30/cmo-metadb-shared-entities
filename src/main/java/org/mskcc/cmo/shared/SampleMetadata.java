@@ -1,6 +1,7 @@
 package org.mskcc.cmo.shared;
 
 import java.io.Serializable;
+import org.apache.commons.lang.builder.ToStringBuilder;
 
 public class SampleMetadata implements Serializable {
     protected String mrn;
@@ -29,31 +30,59 @@ public class SampleMetadata implements Serializable {
 
     public SampleMetadata(){}
 
-    public SampleMetadata(String mrn, String cmoPatientId, String cmoSampleId, String igoId, String investigatorSampleId, String species,
-                          String sex, String tumorOrNormal, String sampleType, String preservation, String tumorType, String parentTumorType,
-                          String specimenType, String sampleOrigin, String tissueSource, String tissueLocation, String recipe,
-                          String baitset, String fastqPath, String principalInvestigator, String ancestorSample, boolean doNotUse, String sampleStatus){
+    /**
+     * SampleMetadata constructor.
+     * @param mrn
+     * @param cmoPatientId
+     * @param cmoSampleId
+     * @param igoId
+     * @param investigatorSampleId
+     * @param species
+     * @param sex
+     * @param tumorOrNormal
+     * @param sampleType
+     * @param preservation
+     * @param tumorType
+     * @param parentTumorType
+     * @param specimenType
+     * @param sampleOrigin
+     * @param tissueSource
+     * @param tissueLocation
+     * @param recipe
+     * @param baitset
+     * @param fastqPath
+     * @param principalInvestigator
+     * @param ancestorSample
+     * @param doNotUse
+     * @param sampleStatus
+     */
+    public SampleMetadata(String mrn, String cmoPatientId, String cmoSampleId, String igoId,
+            String investigatorSampleId, String species, String sex, String tumorOrNormal, String sampleType,
+            String preservation, String tumorType, String parentTumorType, String specimenType,
+            String sampleOrigin, String tissueSource, String tissueLocation, String recipe, String baitset,
+            String fastqPath, String principalInvestigator, String ancestorSample, boolean doNotUse,
+            String sampleStatus) {
         this.mrn = mrn;
         this.cmoPatientId = cmoPatientId;
         this.cmoSampleId = cmoSampleId;
-        this.igoId=igoId;
-        this.investigatorSampleId=investigatorSampleId;
-        this.species=species;
-        this.sex=sex;
-        this.tumorOrNormal=tumorOrNormal;
-        this.sampleType=sampleType;
-        this.preservation=preservation;
-        this.tumorType=tumorType;
-        this.parentTumorType=parentTumorType;
-        this.specimenType=specimenType;
-        this.sampleOrigin=sampleOrigin;
-        this.tissueSource=tissueSource;
-        this.tissueLocation=tissueLocation;
-        this.recipe=recipe;
-        this.baitset=baitset;
+        this.igoId = igoId;
+        this.investigatorSampleId = investigatorSampleId;
+        this.species = species;
+        this.sex = sex;
+        this.tumorOrNormal = tumorOrNormal;
+        this.sampleType = sampleType;
+        this.preservation = preservation;
+        this.tumorType = tumorType;
+        this.parentTumorType = parentTumorType;
+        this.specimenType = specimenType;
+        this.sampleOrigin = sampleOrigin;
+        this.tissueSource = tissueSource;
+        this.tissueLocation = tissueLocation;
+        this.recipe = recipe;
+        this.baitset = baitset;
         this.principalInvestigator = principalInvestigator;
-        this.fastqPath=fastqPath;
-        this.ancestorSample=ancestorSample;
+        this.fastqPath = fastqPath;
+        this.ancestorSample = ancestorSample;
         this.doNotUse = doNotUse;
         this.sampleStatus = sampleStatus;
     }
@@ -244,30 +273,7 @@ public class SampleMetadata implements Serializable {
 
     @Override
     public String toString() {
-        return "SampleMetadata{" +
-                "mrn='" + mrn + '\'' +
-                ", cmoPatientId='" + cmoPatientId + '\'' +
-                ", cmoSampleId='" + cmoSampleId + '\'' +
-                ", igoId='" + igoId + '\'' +
-                ", investigatorSampleId='" + investigatorSampleId + '\'' +
-                ", species='" + species + '\'' +
-                ", sex='" + sex + '\'' +
-                ", tumorOrNormal='" + tumorOrNormal + '\'' +
-                ", sampleType='" + sampleType + '\'' +
-                ", preservation='" + preservation + '\'' +
-                ", tumorType='" + tumorType + '\'' +
-                ", parentTumorType='" + parentTumorType + '\'' +
-                ", specimenType='" + specimenType + '\'' +
-                ", sampleOrigin='" + sampleOrigin + '\'' +
-                ", tissueSource='" + tissueSource + '\'' +
-                ", tissueLocation='" + tissueLocation + '\'' +
-                ", recipe='" + recipe + '\'' +
-                ", baitset='" + baitset + '\'' +
-                ", fastqPath='" + fastqPath + '\'' +
-                ", ancestorSample='" + ancestorSample + '\'' +
-                ", doNotUse=" + doNotUse +
-                ", sampleStatus='" + sampleStatus + '\'' +
-                '}';
+        return ToStringBuilder.reflectionToString(this);
     }
 }
 

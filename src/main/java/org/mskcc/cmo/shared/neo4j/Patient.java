@@ -11,14 +11,15 @@ import org.neo4j.ogm.annotation.Relationship;
  *
  * @author ochoaa
  */
-@NodeEntity(label="patient")
+
+@NodeEntity(label = "patient")
 public class Patient implements Serializable {
     @Id @GeneratedValue
     private Long id;
-    @Property(name="value")
+    @Property(name = "value")
     private String patientId;
     private String idSource;
-    @Relationship(type="PX_TO_PX", direction=Relationship.OUTGOING)
+    @Relationship(type = "PX_TO_PX", direction = Relationship.OUTGOING)
     private PatientMetadata patientMetadata;
 
     public Patient() {}

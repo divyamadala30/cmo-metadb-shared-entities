@@ -1,10 +1,9 @@
 package org.mskcc.cmo.shared.neo4j;
 
-import org.mskcc.cmo.shared.SampleMetadata;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import org.mskcc.cmo.shared.SampleMetadata;
 import org.neo4j.ogm.annotation.GeneratedValue;
 import org.neo4j.ogm.annotation.Id;
 import org.neo4j.ogm.annotation.NodeEntity;
@@ -13,25 +12,55 @@ import org.neo4j.ogm.annotation.typeconversion.Convert;
 import org.neo4j.ogm.id.UuidStrategy;
 import org.neo4j.ogm.typeconversion.UuidStringConverter;
 
-@NodeEntity(label="cmo_metadb_sample_metadata")
+@NodeEntity(label = "cmo_metadb_sample_metadata")
 public class SampleMetadataEntity extends SampleMetadata {
     @Id @GeneratedValue(strategy = UuidStrategy.class)
     @Convert(UuidStringConverter.class)
     private UUID uuid;
-    @Relationship(type="SP_TO_SP", direction=Relationship.INCOMING)
+    @Relationship(type = "SP_TO_SP", direction = Relationship.INCOMING)
     private List<Sample> sampleList;
-    @Relationship(type="PX_TO_SP", direction=Relationship.INCOMING)
+    @Relationship(type = "PX_TO_SP", direction = Relationship.INCOMING)
     private PatientMetadata patient;
 
     public SampleMetadataEntity() {
         super();
     }
 
-    public SampleMetadataEntity(UUID uuid, String mrn, String cmoPatientId, String cmoSampleId, String igoId, String investigatorSampleId, String species,
-                          String sex, String tumorOrNormal, String sampleType, String preservation, String tumorType, String parentTumorType,
-                          String specimenType, String sampleOrigin, String tissueSource, String tissueLocation, String recipe,
-                          String baitset, String fastqPath, String principalInvestigator, String ancestorSample, boolean doNotUse, String sampleStatus,
-                          List<Sample> sampleList, PatientMetadata patient) {
+    /**
+     * SampleMetadataEntity constructor.
+     * @param uuid
+     * @param mrn
+     * @param cmoPatientId
+     * @param cmoSampleId
+     * @param igoId
+     * @param investigatorSampleId
+     * @param species
+     * @param sex
+     * @param tumorOrNormal
+     * @param sampleType
+     * @param preservation
+     * @param tumorType
+     * @param parentTumorType
+     * @param specimenType
+     * @param sampleOrigin
+     * @param tissueSource
+     * @param tissueLocation
+     * @param recipe
+     * @param baitset
+     * @param fastqPath
+     * @param principalInvestigator
+     * @param ancestorSample
+     * @param doNotUse
+     * @param sampleStatus
+     * @param sampleList
+     * @param patient
+     */
+    public SampleMetadataEntity(UUID uuid, String mrn, String cmoPatientId, String cmoSampleId, String igoId,
+            String investigatorSampleId, String species, String sex, String tumorOrNormal, String sampleType,
+            String preservation, String tumorType, String parentTumorType, String specimenType,
+            String sampleOrigin, String tissueSource, String tissueLocation, String recipe, String baitset,
+            String fastqPath, String principalInvestigator, String ancestorSample, boolean doNotUse,
+            String sampleStatus, List<Sample> sampleList, PatientMetadata patient) {
         super(mrn,
             cmoPatientId,
             cmoSampleId,
@@ -76,6 +105,10 @@ public class SampleMetadataEntity extends SampleMetadata {
         this.sampleList = sampleList;
     }
 
+    /**
+     * Add sample to array.
+     * @param sample
+     */
     public void addSample(Sample sample) {
         if (sampleList == null) {
             sampleList = new ArrayList<>();
