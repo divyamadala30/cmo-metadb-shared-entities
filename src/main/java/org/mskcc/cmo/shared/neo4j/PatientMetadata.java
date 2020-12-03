@@ -16,15 +16,16 @@ import org.neo4j.ogm.typeconversion.UuidStringConverter;
  *
  * @author ochoaa
  */
-@NodeEntity(label="cmo_metadb_patient_metadata")
+
+@NodeEntity(label = "cmo_metadb_patient_metadata")
 public class PatientMetadata implements Serializable {
     @Id @GeneratedValue(strategy = UuidStrategy.class)
     @Convert(UuidStringConverter.class)
     private UUID uuid;
     private String investigatorPatientId;
-    @Relationship(type="PX_TO_SP", direction=Relationship.OUTGOING)
+    @Relationship(type = "PX_TO_SP", direction = Relationship.OUTGOING)
     private List<SampleMetadataEntity> sampleMetadataList;
-    @Relationship(type="PX_TO_PX", direction=Relationship.INCOMING)
+    @Relationship(type = "PX_TO_PX", direction = Relationship.INCOMING)
     private List<Patient>  patientList;
 
     public PatientMetadata() {}
@@ -53,6 +54,10 @@ public class PatientMetadata implements Serializable {
         this.sampleMetadataList = sampleMetadataList;
     }
 
+    /**
+     * Link a SampleMetadata instance to this PatientMetadata.
+     * @param sampleMetadata
+     */
     public void linkSampleMetadata(SampleMetadataEntity sampleMetadata) {
         if (sampleMetadataList == null) {
             sampleMetadataList = new ArrayList<>();
@@ -68,6 +73,10 @@ public class PatientMetadata implements Serializable {
         this.patientList = linkedPatientList;
     }
 
+    /**
+     * Add patient to array list.
+     * @param patient
+     */
     public void addPatient(Patient patient) {
         if (patientList == null) {
             patientList = new ArrayList<>();

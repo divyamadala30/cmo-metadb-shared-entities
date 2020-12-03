@@ -10,18 +10,24 @@ import org.neo4j.ogm.annotation.Relationship;
  * Node entity representing the linked sample entity from an external system.
  * @author ochoaa
  */
-@NodeEntity(label="sample")
+
+@NodeEntity(label = "sample")
 public class Sample implements Serializable {
     @Id @GeneratedValue
     private Long id;
-    @Property(name="value")
+    @Property(name = "value")
     private String sampleId;
     private String idSource;
-    @Relationship(type="SP_TO_SP", direction=Relationship.OUTGOING)
+    @Relationship(type = "SP_TO_SP", direction = Relationship.OUTGOING)
     private SampleMetadataEntity sampleMetadata;
 
     public Sample() {}
 
+    /**
+     * Sample constructor.
+     * @param sampleId
+     * @param idSource
+     */
     public Sample(String sampleId, String idSource) {
         this.sampleId = sampleId;
         this.idSource = idSource;

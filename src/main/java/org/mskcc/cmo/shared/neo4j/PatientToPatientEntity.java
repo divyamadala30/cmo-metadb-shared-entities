@@ -13,11 +13,12 @@ import org.neo4j.ogm.annotation.StartNode;
  *
  * @author ochoaa
  */
-@RelationshipEntity(type="PX_TO_PX")
+
+@RelationshipEntity(type = "PX_TO_PX")
 public class PatientToPatientEntity implements Serializable {
     @Id @GeneratedValue
     private Long id;
-    @Property(name="value")
+    @Property(name = "value")
     private Collection<String> patientIds;
     @StartNode
     private Patient patient;
