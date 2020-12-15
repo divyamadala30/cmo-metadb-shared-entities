@@ -21,6 +21,8 @@ public class SampleMetadataEntity extends SampleMetadata {
     private List<Sample> sampleList;
     @Relationship(type = "PX_TO_SP", direction = Relationship.INCOMING)
     private PatientMetadata patient;
+    @Relationship(type = "SAMPLE_METADATA", direction = Relationship.OUTGOING)
+    private SampleMetadata sampleMetadata;
 
     public SampleMetadataEntity() {
         super();

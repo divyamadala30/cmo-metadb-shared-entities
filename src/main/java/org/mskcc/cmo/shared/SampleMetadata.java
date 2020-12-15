@@ -1,6 +1,7 @@
 package org.mskcc.cmo.shared;
 
 import java.io.Serializable;
+import java.util.Date;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
 public class SampleMetadata implements Serializable {
@@ -27,6 +28,8 @@ public class SampleMetadata implements Serializable {
     protected String ancestorSample;
     protected boolean doNotUse;
     protected String sampleStatus;
+    protected Date creationDate;
+    private String requestId;
 
     public SampleMetadata(){}
 
@@ -271,9 +274,26 @@ public class SampleMetadata implements Serializable {
         this.sampleStatus = sampleStatus;
     }
 
+    public Date getCreationDate() {
+        return creationDate;
+    }
+
+    public void setCreationDate(Date creationDate) {
+        this.creationDate = creationDate;
+    }
+
+    public String getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
+
     @Override
     public String toString() {
         return ToStringBuilder.reflectionToString(this);
     }
+
 }
 
