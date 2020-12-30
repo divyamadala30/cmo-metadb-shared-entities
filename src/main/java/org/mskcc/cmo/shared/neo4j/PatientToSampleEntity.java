@@ -18,7 +18,7 @@ public class PatientToSampleEntity implements Serializable {
     @StartNode
     private PatientMetadata patient;
     @EndNode
-    private SampleMetadataEntity sampleMetadata;
+    private SampleManifestEntity sampleMetadata;
 
     public PatientToSampleEntity() {}
 
@@ -30,11 +30,11 @@ public class PatientToSampleEntity implements Serializable {
         this.patient = patient;
     }
 
-    public SampleMetadataEntity getSampleMetadata() {
+    public SampleManifestEntity getSampleMetadata() {
         return sampleMetadata;
     }
 
-    public void setSampleMetadata(SampleMetadataEntity sampleMetadata) {
+    public void setSampleMetadata(SampleManifestEntity sampleMetadata) {
         this.sampleMetadata = sampleMetadata;
     }
 

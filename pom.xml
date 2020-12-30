@@ -13,7 +13,7 @@
     <java.version>1.8</java.version>
     <maven.compiler.version>1.8</maven.compiler.version>
     <spring.boot.version>2.3.3.RELEASE</spring.boot.version>
-    <cmo_metadb_common.version>v1.0-alpha</cmo_metadb_common.version>
+    <cmo_metadb_common.version>v1.1-alpha</cmo_metadb_common.version>
     <cmo_metadb_common.groupId>com.github.mskcc</cmo_metadb_common.groupId>
     <cmo_metadb_common.artifactId>cmo-metadb-common</cmo_metadb_common.artifactId>
   </properties>

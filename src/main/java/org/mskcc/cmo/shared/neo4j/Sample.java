@@ -19,7 +19,7 @@ public class Sample implements Serializable {
     private String sampleId;
     private String idSource;
     @Relationship(type = "SP_TO_SP", direction = Relationship.OUTGOING)
-    private SampleMetadataEntity sampleMetadata;
+    private SampleManifestEntity sampleMetadata;
 
     public Sample() {}
 
@@ -49,11 +49,11 @@ public class Sample implements Serializable {
         this.idSource = idSource;
     }
 
-    public SampleMetadataEntity getSampleMetadata() {
+    public SampleManifestEntity getSampleMetadata() {
         return sampleMetadata;
     }
 
-    public void setSampleMetadata(SampleMetadataEntity sampleMetadata) {
+    public void setSampleMetadata(SampleManifestEntity sampleMetadata) {
         this.sampleMetadata = sampleMetadata;
     }
 

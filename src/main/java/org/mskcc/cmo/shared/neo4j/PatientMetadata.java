@@ -24,7 +24,9 @@ public class PatientMetadata implements Serializable {
     private UUID uuid;
     private String investigatorPatientId;
     @Relationship(type = "PX_TO_SP", direction = Relationship.OUTGOING)
-    private List<SampleMetadataEntity> sampleMetadataList;
+    private List<SampleManifestEntity> sampleManifestList;
+    @Relationship(type = "PX_TO_NORMAL", direction = Relationship.OUTGOING)
+    private List<SampleManifestEntity> normalSampleManifestList;
     @Relationship(type = "PX_TO_PX", direction = Relationship.INCOMING)
     private List<Patient>  patientList;
 
@@ -46,23 +48,31 @@ public class PatientMetadata implements Serializable {
         this.investigatorPatientId = investigatorPatientId;
     }
 
-    public List<SampleMetadataEntity> getSampleMetadataList() {
-        return sampleMetadataList;
+    public List<SampleManifestEntity> getSampleManifestList() {
+        return sampleManifestList;
     }
 
-    public void setSampleMetadataList(List<SampleMetadataEntity> sampleMetadataList) {
-        this.sampleMetadataList = sampleMetadataList;
+    public void setSampleManifestList(List<SampleManifestEntity> sampleManifestList) {
+        this.sampleManifestList = sampleManifestList;
     }
 
     /**
-     * Link a SampleMetadata instance to this PatientMetadata.
-     * @param sampleMetadata
+     * Link a SampleManifest instance to this PatientMetadata.
+     * @param sampleManifest
      */
-    public void linkSampleMetadata(SampleMetadataEntity sampleMetadata) {
-        if (sampleMetadataList == null) {
-            sampleMetadataList = new ArrayList<>();
+    public void linkSampleManifest(SampleManifestEntity sampleManifest) {
+        if (sampleManifestList == null) {
+            sampleManifestList = new ArrayList<>();
         }
-        sampleMetadataList.add(sampleMetadata);
+        sampleManifestList.add(sampleManifest);
+    }
+
+    public List<SampleManifestEntity> getNormalSampleManifestList() {
+        return normalSampleManifestList;
+    }
+
+    public void setNormalSampleManifestList(List<SampleManifestEntity> normalSampleManifestList) {
+        this.normalSampleManifestList = normalSampleManifestList;
     }
 
     public List<Patient> getPatientList() {
