@@ -12,8 +12,7 @@
   <properties>
     <java.version>1.8</java.version>
     <maven.compiler.version>1.8</maven.compiler.version>
-    <spring.boot.version>2.3.3.RELEASE</spring.boot.version>
-    <cmo_metadb_common.version>v1.0-alpha</cmo_metadb_common.version>
+    <cmo_metadb_common.version>v1.1-alpha</cmo_metadb_common.version>
     <cmo_metadb_common.groupId>com.github.mskcc</cmo_metadb_common.groupId>
     <cmo_metadb_common.artifactId>cmo-metadb-common</cmo_metadb_common.artifactId>
   </properties>
@@ -27,33 +26,11 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-data-neo4j</artifactId>
-      <version>${spring.boot.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j-ogm</artifactId>
-      <version>3.2.17</version>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>com.graphaware.neo4j</groupId>
-      <artifactId>server-community</artifactId>
-      <version>2.2.6.35</version>
-    </dependency>
-    <dependency>
-      <groupId>com.graphaware.neo4j</groupId>
-      <artifactId>uuid</artifactId>
-      <version>2.2.6.35.7</version>
-    </dependency>
-    <dependency>
       <groupId>commons-lang</groupId>
       <artifactId>commons-lang</artifactId>
       <version>2.4</version>
     </dependency>
   </dependencies>
-
   <build>
     <plugins>
       <plugin>
