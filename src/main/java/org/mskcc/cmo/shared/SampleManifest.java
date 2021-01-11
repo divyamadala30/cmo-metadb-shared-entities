@@ -257,6 +257,17 @@ public class SampleManifest {
     }
 
     /**
+     * Adds QcReport to list.
+     * @param qcReport
+     */
+    public void addQcReport(QcReport qcReport) {
+        if (qcReports == null) {
+            this.qcReports = new ArrayList<>();
+        }
+        qcReports.add(qcReport);
+    }
+
+    /**
      * Returns empty array list if field is null.
      * @return
      */
@@ -269,6 +280,17 @@ public class SampleManifest {
 
     public void setLibraries(List<Library> libraries) {
         this.libraries = libraries;
+    }
+
+    /**
+     * Adds Library to list.
+     * @param library
+     */
+    public void addLibrary(Library library) {
+        if (libraries == null) {
+            this.libraries = new ArrayList<>();
+        }
+        libraries.add(library);
     }
 
     @Override

@@ -132,6 +132,17 @@ public class Run implements Serializable {
         this.fastqs = fastqs;
     }
 
+    /**
+     * Adds FastQ to list.
+     * @param fastq
+     */
+    public void addFastq(String fastq) {
+        if (fastqs == null) {
+            this.fastqs = new ArrayList<>();
+        }
+        fastqs.add(fastq);
+    }
+
     @Override
     public String toString() {
         return ToStringBuilder.reflectionToString(this);
