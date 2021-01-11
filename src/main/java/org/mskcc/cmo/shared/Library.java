@@ -154,6 +154,17 @@ public class Library implements Serializable {
     }
 
     /**
+     * Adds Run to list.
+     * @param run
+     */
+    public void addRun(Run run) {
+        if (runs == null) {
+            this.runs = new ArrayList<>();
+        }
+        this.runs.add(run);
+    }
+
+    /**
      * Determines whether library has any fastqs.
      * @return
      */
