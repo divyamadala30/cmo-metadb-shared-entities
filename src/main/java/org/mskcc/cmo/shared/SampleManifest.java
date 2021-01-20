@@ -10,30 +10,17 @@ import org.apache.commons.lang.builder.ToStringBuilder;
  * @author ochoaa
  */
 @JsonIgnoreProperties(value = { "cmoInfoIgoId" })
-public class SampleManifest {
-    private String igoId;
-    // left out of pipeline JSON
-    private String cmoInfoIgoId;
-    // aka "Corrected CMO Sample ID", but not an ID by normal database standards
-    private String cmoSampleName;
-    private String sampleName;
-    private String cmoSampleClass;
-    private String cmoPatientId;
-    private String investigatorSampleId;
-    private String oncotreeCode;
-    private String tumorOrNormal;
-    private String tissueLocation;
-    private String specimenType;
-    private String sampleOrigin;
-    private String preservation;
-    private String collectionYear;
-    private String sex;
-    private String species;
-    private String tubeId;
-    private String cfDNA2dBarcode;
-    private String baitSet;
-    private List<QcReport> qcReports;
-    private List<Library> libraries;
+public class SampleManifest extends SampleMetadata {
+    protected String cmoInfoIgoId;
+    protected String cmoSampleName;
+    protected String sampleName;
+    protected String cmoSampleClass;
+    protected String oncotreeCode;
+    protected String collectionYear;
+    protected String tubeId;
+    protected String cfDNA2dBarcode;
+    protected List<QcReport> qcReports;
+    protected List<Library> libraries;
 
     public SampleManifest() {}
 
@@ -84,17 +71,8 @@ public class SampleManifest {
         this.species = species;
         this.tubeId = tubeId;
         this.cfDNA2dBarcode = cfDNA2dBarcode;
-        this.baitSet = baitSet;
         this.qcReports = qcReports;
         this.libraries = libraries;
-    }
-
-    public String getIgoId() {
-        return igoId;
-    }
-
-    public void setIgoId(String igoId) {
-        this.igoId = igoId;
     }
 
     public String getCmoInfoIgoId() {
@@ -129,22 +107,6 @@ public class SampleManifest {
         this.cmoSampleClass = cmoSampleClass;
     }
 
-    public String getCmoPatientId() {
-        return cmoPatientId;
-    }
-
-    public void setCmoPatientId(String cmoPatientId) {
-        this.cmoPatientId = cmoPatientId;
-    }
-
-    public String getInvestigatorSampleId() {
-        return investigatorSampleId;
-    }
-
-    public void setInvestigatorSampleId(String investigatorSampleId) {
-        this.investigatorSampleId = investigatorSampleId;
-    }
-
     public String getOncotreeCode() {
         return oncotreeCode;
     }
@@ -153,68 +115,12 @@ public class SampleManifest {
         this.oncotreeCode = oncotreeCode;
     }
 
-    public String getTumorOrNormal() {
-        return tumorOrNormal;
-    }
-
-    public void setTumorOrNormal(String tumorOrNormal) {
-        this.tumorOrNormal = tumorOrNormal;
-    }
-
-    public String getTissueLocation() {
-        return tissueLocation;
-    }
-
-    public void setTissueLocation(String tissueLocation) {
-        this.tissueLocation = tissueLocation;
-    }
-
-    public String getSpecimenType() {
-        return specimenType;
-    }
-
-    public void setSpecimenType(String specimenType) {
-        this.specimenType = specimenType;
-    }
-
-    public String getSampleOrigin() {
-        return sampleOrigin;
-    }
-
-    public void setSampleOrigin(String sampleOrigin) {
-        this.sampleOrigin = sampleOrigin;
-    }
-
-    public String getPreservation() {
-        return preservation;
-    }
-
-    public void setPreservation(String preservation) {
-        this.preservation = preservation;
-    }
-
     public String getCollectionYear() {
         return collectionYear;
     }
 
     public void setCollectionYear(String collectionYear) {
         this.collectionYear = collectionYear;
-    }
-
-    public String getSex() {
-        return sex;
-    }
-
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
-
-    public String getSpecies() {
-        return species;
-    }
-
-    public void setSpecies(String species) {
-        this.species = species;
     }
 
     public String getTubeId() {
@@ -231,14 +137,6 @@ public class SampleManifest {
 
     public void setCfDNA2dBarcode(String cfDNA2dBarcode) {
         this.cfDNA2dBarcode = cfDNA2dBarcode;
-    }
-
-    public String getBaitSet() {
-        return baitSet;
-    }
-
-    public void setBaitSet(String baitSet) {
-        this.baitSet = baitSet;
     }
 
     /**
