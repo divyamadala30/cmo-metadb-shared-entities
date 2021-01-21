@@ -6,23 +6,23 @@ import java.util.List;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
 public class IgoRequest implements Serializable {
-    private String requestId;
-    private String recipe;
-    private String projectManagerName;
-    private String piEmail;
-    private String labHeadName;
-    private String labHeadEmail;
-    private String investigatorName;
-    private String investigatorEmail;
-    private String dataAnalystName;
-    private String dataAnalystEmail;
-    private String otherContactEmails;
-    private String dataAccessEmails;
-    private String qcAccessEmails;
-    private String strand; // only for RNASeq
-    private String libraryType; // only for RNASeq
-    private List<RequestSample> requestSamples;
-    private List<String> pooledNormals;
+    protected String requestId;
+    protected String recipe;
+    protected String projectManagerName;
+    protected String piEmail;
+    protected String labHeadName;
+    protected String labHeadEmail;
+    protected String investigatorName;
+    protected String investigatorEmail;
+    protected String dataAnalystName;
+    protected String dataAnalystEmail;
+    protected String otherContactEmails;
+    protected String dataAccessEmails;
+    protected String qcAccessEmails;
+    protected String strand; // only for RNASeq
+    protected String libraryType; // only for RNASeq
+    protected List<RequestSample> requestSamples;
+    protected List<String> pooledNormals;
 
     public IgoRequest() {}
 
