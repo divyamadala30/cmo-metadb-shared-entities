@@ -1,7 +1,6 @@
 package org.mskcc.cmo.shared;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +11,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
  * @author ochoaa
  */
 @JsonIgnoreProperties(value = { "cmoInfoIgoId" })
-public class SampleManifest extends SampleMetadata implements Serializable{
+public class SampleManifest extends SampleMetadata implements Serializable {
     protected String cmoInfoIgoId;
     protected String cmoSampleName;
     protected String sampleName;
@@ -23,35 +22,6 @@ public class SampleManifest extends SampleMetadata implements Serializable{
     protected String cfDNA2dBarcode;
     protected List<QcReport> qcReports;
     protected List<Library> libraries;
-    
-    public static enum TumorOrNormal {
-        TUMOR("Tumor"),
-        NORMAL("Normal");
-        
-        private String propertyName;
-        
-        TumorOrNormal(String string) {
-            propertyName = string;
-        }
-        
-        public String toString() {
-            return propertyName; 
-        }
-        
-        /**
-         * @param value
-         */
-        static boolean has(String value) {
-            if (value == null) {
-                return false;
-            }
-            try { 
-                return valueOf(value.toUpperCase()) != null; 
-            } catch (IllegalArgumentException x) { 
-                return false;
-            }
-        }
-    }
     
     public SampleManifest() {}
 
