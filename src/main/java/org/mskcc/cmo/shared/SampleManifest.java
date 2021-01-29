@@ -1,6 +1,8 @@
 package org.mskcc.cmo.shared;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.commons.lang.builder.ToStringBuilder;
@@ -10,7 +12,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
  * @author ochoaa
  */
 @JsonIgnoreProperties(value = { "cmoInfoIgoId" })
-public class SampleManifest extends SampleMetadata {
+public class SampleManifest extends SampleMetadata implements Serializable{
     protected String cmoInfoIgoId;
     protected String cmoSampleName;
     protected String sampleName;
